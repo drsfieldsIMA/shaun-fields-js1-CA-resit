@@ -17,7 +17,7 @@ async function getrandomJoke(){
 // In addition remove the image_html
     catch(error){
             const joke_title = document.querySelector("h2.joke.title");
-            title_html =`Unfortunately there was an error fetching the joke check you internet connection`
+            title_html =`Unfortunately there was an error fetching the joke check your internet connection`
             joke_title.innerHTML = title_html;
             const image_html = document.querySelector(".joke_img");
             image_html.remove();
