@@ -3,23 +3,21 @@ const tally = document.querySelector("input");
 const blocks = document.querySelector(".dynamic_divs");
 
 // The event listener is the change event to the querySelector input
-    tally.addEventListener('change', (event) => {
-        const amount = event.target.value;
-        const N=amount+1;
-        let html = "";
+tally.addEventListener("change", (event) => {
+  const amount = event.target.value;
+  const N = amount + 1;
+  let html = "";
 
-            for (let i = 1; i <= amount; i++){
-                html += `<div class="dynamic_divs">
+  for (let i = 1; i <= amount; i++) {
+    html += `<div class="dynamic_divs">
                                 block ${i}
                             </div>`;
-            }
+  }
 
+  blocks.innerHTML = html;
+});
 
-        blocks.innerHTML=html;
-
-    });
-
-// Remove the blocks once the reset button is clicked 
-document.querySelector(".reset").addEventListener("click", (event)=> {blocks.remove();});
-
-
+// Remove the blocks once the reset button is clicked
+document.querySelector(".reset").addEventListener("click", (event) => {
+  blocks.remove();
+});

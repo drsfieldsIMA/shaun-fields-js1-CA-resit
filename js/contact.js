@@ -12,85 +12,81 @@ const form = document.querySelector("#contactForm");
 form.addEventListener("submit", validateForm);
 
 function validateForm(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const firstName = document.querySelector("#firstName");
-    const firstNameError = document.querySelector("#firstNameError");
-    const firstNameValue = firstName.value;
-    let firstinput="first name";
-    checkerror(firstNameError, firstNameValue, 1,firstinput)
-    
-    const secondName = document.querySelector("#secondName");
-    const secondNameError = document.querySelector("#secondNameError");
-    const secondNameValue = secondName.value;
-    let secondinput="second name";
-    checkerror(secondNameError, secondNameValue, 3,secondinput)
+  const firstName = document.querySelector("#firstName");
+  const firstNameError = document.querySelector("#firstNameError");
+  const firstNameValue = firstName.value;
+  let firstinput = "first name";
+  checkerror(firstNameError, firstNameValue, 1, firstinput);
 
+  const secondName = document.querySelector("#secondName");
+  const secondNameError = document.querySelector("#secondNameError");
+  const secondNameValue = secondName.value;
+  let secondinput = "second name";
+  checkerror(secondNameError, secondNameValue, 3, secondinput);
 
-    const subjectName = document.querySelector("#subjectName");
-    const subjectError = document.querySelector("#subjectError");
-    const subjectValue = subject.value;
-    let thirdinput="subject";
-    checkerror(subjectError, subjectValue, 7,thirdinput)
-         
+  const subjectName = document.querySelector("#subjectName");
+  const subjectError = document.querySelector("#subjectError");
+  const subjectValue = subject.value;
+  let thirdinput = "subject";
+  checkerror(subjectError, subjectValue, 7, thirdinput);
 
-    const emailText= document.querySelector("#email");
-    const emailError = document.querySelector("#emailError");
-    const emailValue = emailText.value;
-    let fifthinput= "email address"
-    findtheAt(emailValue,emailError)
-                
+  const emailText = document.querySelector("#email");
+  const emailError = document.querySelector("#emailError");
+  const emailValue = emailText.value;
+  let fifthinput = "email address";
+  findtheAt(emailValue, emailError);
 
-    const messageText= document.querySelector("#message");
-    const messageError = document.querySelector("#messageError");
-    const messageValue = messageText.value;
-    let fourthinput="message";
-    checkerror(messageError, messageValue, 15,fourthinput)
-
+  const messageText = document.querySelector("#message");
+  const messageError = document.querySelector("#messageError");
+  const messageValue = messageText.value;
+  let fourthinput = "message";
+  checkerror(messageError, messageValue, 10, fourthinput);
 }
 
 function checkerror(XError, Xvalue, tol, inpt) {
-    let str=`${tol}`;
-    let name= inpt;
-// if the value's length is greater than tol return true
-        if (checkInputLength(Xvalue, tol) === true) {
-            XError.style.display = "none";
-// else diplay the appriopriate error message try to be specific as possible
-        } else {
-            XError.style.display = "block";
-                if (tol===1){
-                     XError.textContent ="Your first name is required";
-                }
-                else{ 
-                    XError.textContent ="Your "+ name + " was not greater than "+ str + " characters";
-                }
-        }
+  let str = `${tol}`;
+  let name = inpt;
+  // if the value's length is greater than tol return true
+  if (checkInputLength(Xvalue, tol) === true) {
+    XError.style.display = "none";
+    // else diplay the appriopriate error message try to be specific as possible
+  } else {
+    XError.style.display = "block";
+    if (tol === 1) {
+      XError.textContent = "Your first name is required";
+    } else {
+      XError.textContent =
+        "Your " + name + " was not greater than " + str + " characters";
+    }
+  }
 }
 
 function checkInputLength(value, tol) {
-    // trim the value
-    const trimmedValue = value.trim();
-            // if the value's length is greater than tol return true
-        if (trimmedValue.length > tol) {
-            return true;
-        } 
-        // else return flase and display the erro message
-        else {
-            return false;
-        }
+  // trim the value
+  const trimmedValue = value.trim();
+  // if the value's length is greater than tol return true
+  if (trimmedValue.length > tol) {
+    return true;
+  }
+  // else return flase and display the erro message
+  else {
+    return false;
+  }
 }
 
-
-function findtheAt(Address,XError) {
-    var n = Address.indexOf("@", 1);
-        if (n >= 1) {
-            XError.style.display = "none";
-                        if (checkInputLength(Address, 2) === false){
-                            XError.style.display = "block";
-                            XError.textContent ="Your email address was not greater than 2 characters";
-                        }
-        } else {
-            XError.style.display = "block";
-            XError.textContent ="Oops your email is not valid it does not have a @";
-        }
+function findtheAt(Address, XError) {
+  var n = Address.indexOf("@", 1);
+  if (n > 1) {
+    XError.style.display = "none";
+    if (checkInputLength(Address, 2) === false) {
+      XError.style.display = "block";
+      XError.textContent =
+        "Your email address was not greater than 2 characters";
+    }
+  } else {
+    XError.style.display = "block";
+    XError.textContent = "Oops your email is not valid it does not have a @";
   }
+}
