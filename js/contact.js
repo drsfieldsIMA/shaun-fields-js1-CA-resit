@@ -85,9 +85,9 @@ function findtheAt(Address,XError) {
     var n = Address.indexOf("@", 1);
         if (n >= 1) {
             XError.style.display = "none";
-                if (checkInputLength(Address, 4) === false){
+                if (checkInputLength(Address, 2) === false){
                     XError.style.display = "block";
-                    XError.textContent ="Your email address was not greater than 4 characters";
+                    XError.textContent ="Your email address was not greater than 2 characters";
                 }
         } else {
             XError.style.display = "block";
