@@ -38,7 +38,8 @@ function validateForm(event) {
     const emailError = document.querySelector("#emailError");
     const emailValue = emailText.value;
     let fifthinput= "email address"
-    findtheAt(emailValue,emailError)            
+    findtheAt(emailValue,emailError)
+                
 
     const messageText= document.querySelector("#message");
     const messageError = document.querySelector("#messageError");
@@ -70,7 +71,7 @@ function checkInputLength(value, tol) {
     // trim the value
     const trimmedValue = value.trim();
             // if the value's length is greater than tol return true
-        if (trimmedValue.length >= tol) {
+        if (trimmedValue.length > tol) {
             return true;
         } 
         // else return flase and display the erro message
@@ -82,8 +83,12 @@ function checkInputLength(value, tol) {
 
 function findtheAt(Address,XError) {
     var n = Address.indexOf("@", 1);
-        if (n > 0) {
+        if (n >= 1) {
             XError.style.display = "none";
+                if (checkInputLength(Address, 4) === false){
+                    XError.style.display = "block";
+                    XError.textContent ="Your email address was not greater than 4 characters";
+                }
         } else {
             XError.style.display = "block";
             XError.textContent ="Oops your email is not valid it does not have a @";
