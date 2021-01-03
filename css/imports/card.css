@@ -1,0 +1,49 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    margin-bottom: 30px;
+}
+
+.card a.details {
+    margin-top: 0.5em;
+    background-color: var(--grey) !important;
+    color: white !important;
+}
+
+.card a.details:hover {
+    background-color: var(--light-grey) !important;
+    color: var(--grey) !important;
+}
+
+.card div.details {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0.5rem;
+    background: white;
+}
+
+.card p {
+    margin-bottom: .5em;
+    font-size: 1.5em;
+    padding: 0.35em;
+}
+
+h4.jokes{
+    font-size: 1.75em;
+    margin-bottom: 0.75rem;
+    color: var(--grey);
+    font-weight: bold;
+    padding: 0.35em;
+}
+
+.image {
+    width: 100%;
+    height: auto;
+}
+
+@media (min-width: 1000px) {
+    .card {
+        flex: 1;
+    }
+}
