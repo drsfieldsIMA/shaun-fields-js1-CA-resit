@@ -45,7 +45,7 @@ function validateForm(event) {
     const messageError = document.querySelector("#messageError");
     const messageValue = messageText.value;
     let fourthinput="message";
-    checkerror(messageError, messageValue, 10,fourthinput)
+    checkerror(messageError, messageValue, 15,fourthinput)
 
 }
 
@@ -85,10 +85,10 @@ function findtheAt(Address,XError) {
     var n = Address.indexOf("@", 1);
         if (n >= 1) {
             XError.style.display = "none";
-                if (checkInputLength(Address, 2) === false){
-                    XError.style.display = "block";
-                    XError.textContent ="Your email address was not greater than 2 characters";
-                }
+                        if (checkInputLength(Address, 2) === false){
+                            XError.style.display = "block";
+                            XError.textContent ="Your email address was not greater than 2 characters";
+                        }
         } else {
             XError.style.display = "block";
             XError.textContent ="Oops your email is not valid it does not have a @";
