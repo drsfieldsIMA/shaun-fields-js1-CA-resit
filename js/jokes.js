@@ -15,7 +15,7 @@ async function getJokes() {
 
         catch(error){
             const joke_title = document.querySelector("h1");
-            title_html =`Unfortunately there was an error fetching the joke check you internet connection`
+            title_html =`Unfortunately there was an error fetching the joke check your internet connection`
             joke_title.innerHTML = title_html;
             document.querySelector("div.joke-detail").style.display="none";
              const load_wheel=document.querySelector(".loader")
